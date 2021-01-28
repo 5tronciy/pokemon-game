@@ -1,13 +1,15 @@
 import s from "./Layout.module.css";
 
 const Layout = ({ id, title, description, urlBackground, colorBackground }) => {
-  const styleRoot = urlBackground
-    ? { backgroundImage: `url(${urlBackground})` }
-    : colorBackground
-    ? { backgroundColor: colorBackground }
-    : {};
+  const style = {};
+  if (urlBackground) {
+    style.backgroundImage = `url(${urlBackground})`;
+  }
+  if (colorBackground) {
+    style.backgroundColor = colorBackground;
+  }
   return (
-    <section className={s.root} id={id} style={styleRoot}>
+    <section className={s.root} id={id} style={style}>
       <div className={s.wrapper}>
         <article>
           {title && (
