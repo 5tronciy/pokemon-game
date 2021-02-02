@@ -6,7 +6,8 @@ import Navbar from "./Navbar";
 const MenuHeader = () => {
   const [isMenuActive, setMenuActive] = useState(false);
 
-  const handleBurgerClick = () => setMenuActive((s) => !s);
+  const handleBurgerClick = () =>
+    setMenuActive((isMenuActive) => !isMenuActive);
 
   return (
     <>
