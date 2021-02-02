@@ -1,6 +1,6 @@
 import s from "./Layout.module.css";
 
-const Layout = ({ id, title, description, urlBackground, colorBackground }) => {
+const Layout = ({ id, title, urlBackground, colorBackground, children }) => {
   const style = {};
   if (urlBackground) {
     style.backgroundImage = `url(${urlBackground})`;
@@ -18,9 +18,9 @@ const Layout = ({ id, title, description, urlBackground, colorBackground }) => {
               <span className={s.separator}></span>
             </div>
           )}
-          {description && (
+          {children && (
             <div className={`${s.desc} ${s.full}`}>
-              <p>{description}</p>
+              {children}
             </div>
           )}
         </article>
