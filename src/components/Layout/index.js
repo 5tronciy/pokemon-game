@@ -1,4 +1,5 @@
 import s from "./Layout.module.css";
+import classNames from "classnames";
 
 const Layout = ({ id, title, urlBackground, colorBackground, children }) => {
   const style = {};
@@ -19,9 +20,7 @@ const Layout = ({ id, title, urlBackground, colorBackground, children }) => {
             </div>
           )}
           {children && (
-            <div className={`${s.desc} ${s.full}`}>
-              {children}
-            </div>
+            <div className={classNames(s.desc, s.full)}>{children}</div>
           )}
         </article>
       </div>
