@@ -1,4 +1,4 @@
-import "./HomePage.module.css";
+import s from "./HomePage.module.css";
 import Header from "./../../components/Header";
 import Layout from "./../../components/Layout";
 import Footer from "./../../components/Footer";
@@ -45,7 +45,7 @@ const HomePage = () => {
         urlBackground={bg2}
         colorBackground="blue"
       >
-        <div className="flex">
+        <div className={s.flex}>
           {POKEMONS.map((item) => (
             <PokemonCard
               name={item.name}
