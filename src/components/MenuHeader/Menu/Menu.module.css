@@ -144,6 +144,7 @@
 .menu-container ul li {
   border-left: 0.2rem solid transparent;
   transition: border-left 200ms;
+  text-transform: uppercase;
 }
 
 .menu-container ul li .nav-link {
