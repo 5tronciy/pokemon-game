@@ -18,11 +18,11 @@ const App = () => {
       <MenuHeader />
       <Switch>
         <Route exact path="/" component={HomePage} />
-        <Route exact path="/home" component={HomePage} />
-        <Route exact path="/game" component={GamePage} />
-        <Route exact path="/about" component={AboutPage} />
-        <Route exact path="/contact" component={ContactPage} />
-        <Route exact path="/404" component={NotFound} />
+        <Route path="/home" component={HomePage} />
+        <Route path="/game" component={GamePage} />
+        <Route path="/about" component={AboutPage} />
+        <Route path="/contact" component={ContactPage} />
+        <Route path="/404" component={NotFound} />
         <Redirect to="/404" />
       </Switch>
     </Router>
