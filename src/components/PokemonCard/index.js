@@ -14,19 +14,17 @@ const PokemonCard = ({
   isActive,
   minimize,
   className,
+  isDisabled = false,
 }) => {
   const onPokemonCard = () => {
     onClick && onClick(id);
   };
   return (
-    <div className={s.root} onClick={onPokemonCard}>
-      <div
-        className={classNames(
-          className,
-          s.pokemonCard,
-          isActive ? s.active : ""
-        )}
-      >
+    <div
+      className={classNames(className)}
+      onClick={!isDisabled ? onPokemonCard : null}
+    >
+      <div className={classNames(s.pokemonCard, isActive ? s.active : "")}>
         <div className={s.cardFront}>
           <div className={classNames(s.wrap, s.front)}>
             <div className={classNames(s.pokemon, s[type])}>
