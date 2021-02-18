@@ -4,13 +4,29 @@ import s from "./PokemonCard.module.css";
 
 import cardBackSide from "./assets/card-back-side.jpg";
 
-const PokemonCard = ({ name, img, id, type, values, onClick, isActive }) => {
+const PokemonCard = ({
+  name,
+  img,
+  id,
+  type,
+  values,
+  onClick,
+  isActive,
+  minimize,
+  className,
+}) => {
   const onPokemonCard = () => {
     onClick && onClick(id);
   };
   return (
     <div className={s.root} onClick={onPokemonCard}>
-      <div className={classNames(s.pokemonCard, isActive ? s.active : "")}>
+      <div
+        className={classNames(
+          className,
+          s.pokemonCard,
+          isActive ? s.active : ""
+        )}
+      >
         <div className={s.cardFront}>
           <div className={classNames(s.wrap, s.front)}>
             <div className={classNames(s.pokemon, s[type])}>
@@ -27,13 +43,15 @@ const PokemonCard = ({ name, img, id, type, values, onClick, isActive }) => {
               <div className={s.imgContainer}>
                 <img src={img} alt={name} />
               </div>
-              <div className={s.info}>
-                <span className={s.number}>#{id}</span>
-                <h3 className={s.name}>{name}</h3>
-                <small className={s.type}>
-                  Type: <span>{type}</span>
-                </small>
-              </div>
+              {!minimize && (
+                <div className={s.info}>
+                  <span className={s.number}>#{id}</span>
+                  <h3 className={s.name}>{name}</h3>
+                  <small className={s.type}>
+                    Type: <span>{type}</span>
+                  </small>
+                </div>
+              )}
             </div>
           </div>
         </div>
