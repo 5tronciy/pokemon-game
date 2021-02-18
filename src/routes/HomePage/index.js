@@ -1,12 +1,10 @@
-import s from "./HomePage.module.css";
+// import s from "./HomePage.module.css";
 import Header from "./../../components/Header";
 import Layout from "./../../components/Layout";
 import Footer from "./../../components/Footer";
-import PokemonCard from "./../../components/PokemonCard";
+
 import bg1 from "./../../assets/bg1.jpg";
-import bg2 from "./../../assets/bg2.jpg";
 import bg3 from "./../../assets/bg3.jpg";
-import { POKEMONS } from "./../../assets/POKEMONS";
 
 const HomePage = () => {
   return (
@@ -38,25 +36,6 @@ const HomePage = () => {
           rank is higher, the opponent's card will be captured and changed into
           the player's color instead.
         </p>
-      </Layout>
-      <Layout
-        id="cards"
-        title="Cards"
-        urlBackground={bg2}
-        colorBackground="blue"
-      >
-        <div className={s.flex}>
-          {POKEMONS.map((item) => (
-            <PokemonCard
-              name={item.name}
-              img={item.img}
-              type={item.type}
-              values={item.values}
-              id={item.id}
-              key={item.id}
-            />
-          ))}
-        </div>
       </Layout>
       <Layout
         id="about"
