@@ -11,10 +11,41 @@ const firebaseConfig = {
   measurementId: "G-RYGRP4Q787",
 };
 
-firebase.initializeApp(firebaseConfig);
+class FirebaseService {
+  constructor() {
+    if (!firebase.apps.length) {
+      firebase.initializeApp(firebaseConfig);
+    } else {
+      firebase.app();
+    }
+    this.fire = firebase;
+    this.database = this.fire.database();
+  }
 
-export const fire = firebase;
+  getPokemonsSocket = (cb) => {
+    this.database.ref("pokemons").on("value", (snapshot) => cb(snapshot.val()));
+  };
 
-export const database = fire.database();
+  getPokemonsOnceAsync = async () => {
+    return await this.database
+      .ref("pokemons")
+      .once("value")
+      .then((snapshot) => snapshot.val());
+  };
 
-export default database;
+  updatePokemon = (key, poke) => {
+    this.database.ref(`pokemons/${key}`).set(poke);
+  };
+
+  addPokemon = (poke, cb) => {
+    const newPostKey = this.database.ref().child("pokemons").push().key;
+    this.database
+      .ref(`pokemons/${newPostKey}`)
+      .set(poke)
+      .then(() => {
+        cb();
+      });
+  };
+}
+
+export default FirebaseService;
