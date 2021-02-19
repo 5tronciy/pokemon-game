@@ -35,6 +35,7 @@
   margin-top: -6vw;
   width: 100%;
   height: 100%;
+  cursor: pointer;
 }
 
 .card:first-child {
