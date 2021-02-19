@@ -1,0 +1,26 @@
+.cardContainer {
+  display: flex;
+  flex-flow: wrap;
+}
+
+.largeCard {
+  width: 268px;
+  height: 388px;
+  margin: 5px;
+}
+
+.startButton {
+  transition: 1s;
+  background-color: rgba(0, 255, 128);
+  display: block;
+  padding: 1rem 6rem;
+  font-weight: bolder;
+  font-size: medium;
+  margin: 10px auto 50px;
+}
+
+.startButton:disabled {
+  transition: 1s;
+  background-color: rgba(128, 128, 128, 0.3);
+  color: rgba(128, 128, 128, 0.3);
+}
