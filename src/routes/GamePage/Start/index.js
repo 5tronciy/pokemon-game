@@ -29,26 +29,21 @@ const GamePage = () => {
         {resources.pokemons &&
           Object.entries(
             resources.pokemons
-          ).map(
-            ([
-              key,
-              { id, type, img, name, values, bgImg, isActive, isSelected },
-            ]) => (
-              <PokemonCard
-                name={name}
-                img={img}
-                type={type}
-                values={values}
-                id={id}
-                key={key}
-                onClick={resources.onCard}
-                isActive={isActive}
-                bgImg={bgImg}
-                isSelected={isSelected}
-                className={s.largeCard}
-              />
-            )
-          )}
+          ).map(([key, { id, type, img, name, values, bgImg, isSelected }]) => (
+            <PokemonCard
+              name={name}
+              img={img}
+              type={type}
+              values={values}
+              id={id}
+              key={key}
+              onClick={resources.onCard}
+              isActive={true}
+              bgImg={bgImg}
+              isSelected={isSelected}
+              className={s.largeCard}
+            />
+          ))}
       </div>
     </Layout>
   );

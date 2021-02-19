@@ -10,21 +10,25 @@ const PokemonCard = ({
   id,
   type,
   values,
+  bgImg,
   onClick,
   isActive,
+  isSelected,
   minimize,
   className,
-  isDisabled = false,
 }) => {
   const onPokemonCard = () => {
     onClick && onClick(id);
   };
   return (
-    <div
-      className={classNames(className)}
-      onClick={!isDisabled ? onPokemonCard : null}
-    >
-      <div className={classNames(s.pokemonCard, isActive ? s.active : "")}>
+    <div className={classNames(className)} onClick={onPokemonCard}>
+      <div
+        className={classNames(
+          s.pokemonCard,
+          { [s.active]: isActive },
+          { [s.selected]: isSelected }
+        )}
+      >
         <div className={s.cardFront}>
           <div className={classNames(s.wrap, s.front)}>
             <div className={classNames(s.pokemon, s[type])}>
@@ -56,7 +60,7 @@ const PokemonCard = ({
 
         <div className={s.cardBack}>
           <div className={classNames(s.wrap, s.back)}>
-            <img src={cardBackSide} alt="Сard Backed" />
+            <img src={bgImg ? bgImg : cardBackSide} alt="Сard Backed" />
           </div>
         </div>
       </div>
