@@ -11,13 +11,10 @@ const firebaseConfig = {
   measurementId: "G-RYGRP4Q787",
 };
 
+firebase.initializeApp(firebaseConfig);
+
 class FirebaseService {
   constructor() {
-    if (!firebase.apps.length) {
-      firebase.initializeApp(firebaseConfig);
-    } else {
-      firebase.app();
-    }
     this.fire = firebase;
     this.database = this.fire.database();
   }
