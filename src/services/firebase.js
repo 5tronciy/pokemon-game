@@ -23,6 +23,10 @@ class FirebaseService {
     this.database.ref("pokemons").on("value", (snapshot) => cb(snapshot.val()));
   };
 
+  offPokemonsSocket = () => {
+    this.database.ref("pokemons").off();
+  };
+
   getPokemonsOnceAsync = async () => {
     return await this.database
       .ref("pokemons")

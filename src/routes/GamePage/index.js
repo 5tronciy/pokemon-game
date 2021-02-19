@@ -56,7 +56,10 @@ const GamePage = () => {
   };
 
   useEffect(() => {
-    firebase.getPokemonsSocket((pokes) => SetPokemons(pokes));
+    firebase.getPokemonsSocket((pokes) => {
+      SetPokemons(pokes);
+    });
+    return () => firebase.offPokemonsSocket();
   }, [firebase]);
 
   return (
