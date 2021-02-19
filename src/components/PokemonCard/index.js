@@ -5,6 +5,7 @@ import s from "./PokemonCard.module.css";
 import cardBackSide from "./assets/card-back-side.jpg";
 
 const PokemonCard = ({
+  outerKey,
   name,
   img,
   id,
@@ -18,7 +19,7 @@ const PokemonCard = ({
   className,
 }) => {
   const onPokemonCard = () => {
-    onClick && onClick(id);
+    onClick && onClick(outerKey);
   };
   return (
     <div className={classNames(className)} onClick={onPokemonCard}>

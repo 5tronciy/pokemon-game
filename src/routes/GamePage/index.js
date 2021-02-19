@@ -13,7 +13,7 @@ const GamePage = () => {
 
   const [pokemons, SetPokemons] = useState({});
 
-  const [pokemonsSelected, SetPokemonsSelected] = useState([]);
+  const [pokemonsSelected, SetPokemonsSelected] = useState({});
 
   const history = useHistory();
 
@@ -23,36 +23,31 @@ const GamePage = () => {
     history.push("/game/board");
   };
 
-  const onCard = (pokemonId) => {
-    Object.entries(pokemons).reduce((acc, item) => {
-      if (item[1].id === pokemonId) {
-        const pokemon = { ...item[1] };
-        if (
-          pokemonsSelected.length < 5 &&
-          !pokemonsSelected.some((i) => i.id === pokemonId)
-        ) {
-          pokemon.isSelected = !pokemon.isSelected;
-          SetPokemons((prevState) => {
-            return { ...prevState, [item[0]]: pokemon };
-          });
-          SetPokemonsSelected((prevState) => {
-            return [...prevState, { ...pokemon }];
-          });
-        } else if (
-          pokemonsSelected.length > 0 &&
-          pokemonsSelected.some((i) => i.id === pokemonId)
-        ) {
-          pokemon.isSelected = !pokemon.isSelected;
-          SetPokemons((prevState) => {
-            return { ...prevState, [item[0]]: pokemon };
-          });
-          SetPokemonsSelected((prevState) =>
-            prevState.filter((i) => i.id !== pokemonId)
-          );
+  const onCard = (outerKey) => {
+    if (
+      Object.keys(pokemonsSelected).length < 5 ||
+      pokemons[outerKey].isSelected
+    ) {
+      const pokemon = { ...pokemons[outerKey] };
+
+      SetPokemons((prevState) => {
+        return {
+          ...prevState,
+          [outerKey]: {
+            ...prevState[outerKey],
+            isSelected: !prevState[outerKey].isSelected,
+          },
+        };
+      });
+      SetPokemonsSelected((prevState) => {
+        if (prevState[outerKey]) {
+          const copiedState = { ...prevState };
+          delete copiedState[outerKey];
+          return copiedState;
         }
-      }
-      return null;
-    }, {});
+        return { ...prevState, [outerKey]: pokemon };
+      });
+    }
   };
 
   useEffect(() => {

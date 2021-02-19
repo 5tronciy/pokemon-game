@@ -15,11 +15,15 @@ const GamePage = () => {
     resources.onGameStart && resources.onGameStart();
   };
 
+  const selectPokemon = (key) => {
+    resources.onCard && resources.onCard(key);
+  };
+
   return (
     <Layout urlBackground={LayoutBg}>
       <button
         className={s.startButton}
-        disabled={resources.pokemonsSelected.length < 5}
+        disabled={Object.keys(resources.pokemonsSelected).length < 5}
         onClick={onGameStart}
       >
         Start Game
@@ -37,7 +41,8 @@ const GamePage = () => {
               values={values}
               id={id}
               key={key}
-              onClick={resources.onCard}
+              outerKey={key}
+              onClick={selectPokemon}
               isActive={true}
               bgImg={bgImg}
               isSelected={isSelected}
