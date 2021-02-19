@@ -31,6 +31,7 @@
 }
 
 .card {
+  transition: 0.4s;
   max-height: 14.8vw;
   margin-top: -6vw;
   width: 100%;
@@ -41,10 +42,29 @@
 .card:first-child {
   margin-top: 0;
 }
+
 .playerOne {
   position: absolute;
   top: 4.3vw;
   left: 5vw;
   width: 250px;
   height: 50.3vw;
+}
+
+.playerTwo {
+  position: absolute;
+  top: 4.3vw;
+  right: 5vw;
+  width: 250px;
+  height: 50.3vw;
+}
+
+.playerTwo .card:hover {
+  transition: 0.4s;
+  transform: translateX(-3vw) rotate(15deg);
+}
+
+.playerOne .card:hover {
+  transition: 0.4s;
+  transform: translateX(3vw) rotate(-15deg);
 }
