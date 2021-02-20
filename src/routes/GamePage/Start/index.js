@@ -9,30 +9,32 @@ import Layout from "./../../../components/Layout";
 import { PokemonContext } from "./../../../context/pokemonContext";
 
 const GamePage = () => {
-  const resources = useContext(PokemonContext);
+  const { startGame, onCard, pokemonsSelected, pokemons } = useContext(
+    PokemonContext
+  );
 
   const onGameStart = () => {
-    resources.onGameStart && resources.onGameStart();
+    startGame && startGame();
   };
 
   const selectPokemon = (key) => {
-    resources.onCard && resources.onCard(key);
+    onCard && onCard(key);
   };
 
   return (
     <Layout urlBackground={LayoutBg}>
       <button
         className={s.startButton}
-        disabled={Object.keys(resources.pokemonsSelected).length < 5}
+        disabled={Object.keys(pokemonsSelected).length < 5}
         onClick={onGameStart}
       >
         Start Game
       </button>
 
       <div className={s.cardContainer}>
-        {resources.pokemons &&
+        {pokemons &&
           Object.entries(
-            resources.pokemons
+            pokemons
           ).map(([key, { id, type, img, name, values, bgImg, isSelected }]) => (
             <PokemonCard
               name={name}
