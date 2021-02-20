@@ -1,12 +1,14 @@
 .cardContainer {
   display: flex;
   flex-flow: wrap;
+  justify-content: center;
 }
 
 .largeCard {
   width: 268px;
   height: 388px;
   margin: 5px;
+  cursor: pointer;
 }
 
 .startButton {
@@ -17,6 +19,10 @@
   font-weight: bolder;
   font-size: medium;
   margin: 10px auto 50px;
+}
+
+.start-button:not(:disabled) {
+  cursor: pointer;
 }
 
 .startButton:disabled {
