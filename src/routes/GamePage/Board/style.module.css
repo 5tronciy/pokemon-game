@@ -43,28 +43,29 @@
   margin-top: 0;
 }
 
-.playerOne {
+.playerOne,
+.playerTwo {
+  padding-top: 8vw;
   position: absolute;
   top: 4.3vw;
-  left: 5vw;
   width: 250px;
   height: 50.3vw;
+}
+
+.playerOne {
+  left: 5vw;
 }
 
 .playerTwo {
-  position: absolute;
-  top: 4.3vw;
   right: 5vw;
-  width: 250px;
-  height: 50.3vw;
 }
 
-.playerTwo .card:hover {
+.playerTwo .selectedCard {
   transition: 0.4s;
   transform: translateX(-3vw) rotate(15deg);
 }
 
-.playerOne .card:hover {
+.playerOne .selectedCard {
   transition: 0.4s;
   transform: translateX(3vw) rotate(-15deg);
 }
