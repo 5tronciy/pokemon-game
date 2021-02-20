@@ -30,6 +30,13 @@
   background: none;
 }
 
+.cardOnPlate {
+  transition: 0.4s;
+  width: 95%;
+  height: 95%;
+  cursor: pointer;
+}
+
 .card {
   transition: 0.4s;
   max-height: 14.8vw;

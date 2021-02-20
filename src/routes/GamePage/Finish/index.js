@@ -11,7 +11,7 @@ const FinishPage = () => {
   const {
     isGameFinished,
     pokemonsSelected,
-    oponetsHand,
+    oponentsHand,
     isPlayerWon,
     endGame,
   } = useContext(PokemonContext);
@@ -22,7 +22,7 @@ const FinishPage = () => {
 
   const [selectedCard, setSelectedCard] = useState(null);
   const [cardsToChoose, setCardsToChoose] = useState(() => {
-    return oponetsHand.map((item) => ({ ...item }));
+    return oponentsHand.map((item) => ({ ...item }));
   });
 
   const handleAddCardClick = (card) => {
