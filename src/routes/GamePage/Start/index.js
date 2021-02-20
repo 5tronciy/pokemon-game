@@ -6,6 +6,7 @@ import s from "./Start.module.css";
 
 import PokemonCard from "./../../../components/PokemonCard";
 import Layout from "./../../../components/Layout";
+import PokeBallLoader from "./../../../components/PokeBallLoader";
 import { PokemonContext } from "./../../../context/pokemonContext";
 
 const GamePage = () => {
@@ -32,7 +33,7 @@ const GamePage = () => {
       </button>
 
       <div className={s.cardContainer}>
-        {pokemons &&
+        {Object.entries(pokemons).length > 0 ? (
           Object.entries(
             pokemons
           ).map(([key, { id, type, img, name, values, bgImg, isSelected }]) => (
@@ -50,7 +51,10 @@ const GamePage = () => {
               isSelected={isSelected}
               className={s.largeCard}
             />
-          ))}
+          ))
+        ) : (
+          <PokeBallLoader />
+        )}
       </div>
     </Layout>
   );

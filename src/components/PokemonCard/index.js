@@ -26,7 +26,7 @@ const PokemonCard = ({
   return (
     <div
       className={classNames(className)}
-      onClick={!isDisabled && onPokemonCard}
+      onClick={!isDisabled ? onPokemonCard : null}
     >
       <div
         className={classNames(
