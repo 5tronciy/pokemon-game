@@ -28,6 +28,7 @@ const PlayerBoard = ({ player, isMoving, cards, className, onCardClick }) => {
               isActive
               bgImg={item.bgImg}
               isSelected={false}
+              isDisabled={!isMoving}
               possession={item.possession}
               className={cn(style["card-board"], {
                 [className]: isSelected === item.id,
