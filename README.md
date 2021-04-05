@@ -1,70 +1,83 @@
-# Getting Started with Create React App
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <h3 align="center">Pokemon-game</h3>
 
-### `npm start`
+  <p align="center">
+    Project built during Zar Marathon.
+    <br />
+    <a href="https://github.com/5tronciy/pokemon-game"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://zar-pokemon-game.netlify.app">View Demo</a>
+    ·
+    <a href="https://github.com/5tronciy/pokemon-game/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/5tronciy/pokemon-game/issues">Request Feature</a>
+  </p>
+</p>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Simple card game with pokemons.
 
-### `npm run build`
+### Built With
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* [React](https://ru.react.js.org)
+* [Redux](https://redux.js.org)
+* [Firebase](https://firebase.google.com)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+<!-- GETTING STARTED -->
+## Getting Started
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+You may try it online or clone the repository and run it locally.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<!-- LICENSE -->
+## License
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Distributed under the MIT License. See `LICENSE` for more information.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<!-- ACKNOWLEDGEMENTS -->
+## Acknowledgements
+* [Netlify](https://pages.github.com)
+* [Classnames](https://www.npmjs.com/package/classnames)
+* [CSS Modules](https://github.com/css-modules/css-modules)
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[Zarmarathon]: https://www.zarmarathon.com
+[contributors-shield]: https://img.shields.io/github/contributors/5tronciy/pokemon-game.svg?style=for-the-badge
+[contributors-url]: https://github.com/5tronciy/pokemon-game/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/5tronciy/pokemon-game.svg?style=for-the-badge
+[forks-url]: https://github.com/5tronciy/pokemon-game/network/members
+[stars-shield]: https://img.shields.io/github/stars/5tronciy/pokemon-game.svg?style=for-the-badge
+[stars-url]: https://github.com/5tronciy/pokemon-game/stargazers
+[issues-shield]: https://img.shields.io/github/issues/5tronciy/pokemon-game.svg?style=for-the-badge
+[issues-url]: https://github.com/5tronciy/pokemon-game/issues
+[license-shield]: https://img.shields.io/github/license/5tronciy/pokemon-game.svg?style=for-the-badge
+[license-url]: https://github.com/5tronciy/pokemon-game/blob/master/LICENSE.txt
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/in/roman-golchuk
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
